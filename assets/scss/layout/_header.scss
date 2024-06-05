@@ -1,0 +1,110 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  02. HEADER CSS START
+/*----------------------------------------*/
+
+.header{
+    &__transparent{
+        position: fixed !important;
+        left: 0;
+        margin: auto;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+        background: transparent;
+    }
+   &__area{
+    background-color: var(--tp-theme-1);
+    padding:24px 0;
+
+
+    & .desk__menu{ 
+        & ul{
+            list-style: none;
+            display:flex;
+            color:#fff;
+            justify-content: center;
+            align-items: center;
+            & li{
+                text-align: center;
+                padding-left:50px;
+                padding-right: 50px;
+                & a{
+                    color: #D2D2D2; 
+                    font-size: 24px;
+                    font-weight: 700;
+                    padding:12px 0;
+                    text-align: center; 
+                    display:inline-block;
+                    border-bottom:1px solid transparent;
+                    transition:all 0.3s;
+                    &:hover{
+                        border-bottom-color:#51CC47;
+                        color:#fff;
+                        // box-shadow: 0px -2px 6.1px 0px #51CC47;
+
+                    }
+                }
+            }
+        }
+    }
+
+    & .header__button{
+        display:flex;
+        justify-content: end;
+        align-items:end;
+        text-align: end;
+        width:100%;
+        a{
+             height:42px;
+             width:234px;
+             line-height: 25px; 
+            border:2px solid #51CC47;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius:12px;
+            color:#51CC47;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            gap:8px;
+            & span{
+                margin-top: 5px;
+                display:inline-block; 
+            }
+        }
+    }
+   }
+    
+ 
+ 
+ 
+    &__sticky{
+        &.header__sticky{
+            position: fixed !important;
+            left: 0;
+            margin: auto;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.07);
+            z-index: 99;
+            -webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+            animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+            -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+            background: var(--tp-common-white);
+        }
+    }
+   
+    
+}
+
+/* logo */
+
+.logo{
+    & img{
+        width: 100px;
+    }
+}
+
+ 

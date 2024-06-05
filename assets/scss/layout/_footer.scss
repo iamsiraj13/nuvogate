@@ -1,0 +1,71 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  00. FOOTER CSS START
+/*----------------------------------------*/
+
+.footer__area{
+        padding-top: 40px;
+        padding-bottom: 90px;
+        background-color:var(--tp-theme-1);
+        @media #{$xs}{
+             padding-bottom: 40px;
+        }
+        & .footer__box{
+            & .footer__inner{
+                display:flex;
+                align-items: center;
+                gap:100px;
+                margin-bottom: 40px;
+                @media #{$xs}{
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: start; 
+                    gap:24px;
+                    margin-bottom: 100px;
+                }
+                & .footer__logo{
+                    & img{
+                        max-width:101px;
+                        width:100%;
+                    }
+                }
+
+                & ul{
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display:flex;
+                    gap:37px;
+                    @media #{$xs}{
+                        flex-direction: column;
+                        gap:24px;
+                    }
+                    & li{
+                        & a{
+                            color:#fff;
+                            font-size: 13px;
+                            font-weight: 400;
+                            @media #{$xs}{
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+            & .footer__desc{ 
+                & p{
+                    color: #909999;
+                    font-size: 10px;
+                    font-weight: 400;
+                    padding: 0;
+                    margin: 0;
+                    line-height: 1.5;
+                    @media #{$xs}{
+                         margin-bottom: 10px;
+                    }
+
+                }
+            }
+        }
+}
