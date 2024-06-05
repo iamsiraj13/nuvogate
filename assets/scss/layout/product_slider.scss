@@ -28,11 +28,49 @@
                     color:#fff;
                     font-weight: 400;
                 }
+                &:last-child{
+                    font-size: 18px;
+                    color:#fff;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                }
                 & img{
                     width:60px;
                 }
             }
            }
+        }
+
+        & tbody{
+            & tr{
+                & td{
+                    color:#fff;
+                    font-size: 17px;
+                    font-weight: 400;
+                    padding-top:26px;
+                    padding-bottom: 28px;
+                    & .active{
+                        width:38px;
+                        height:38px; 
+                        background: #91E18B;
+                        text-align: center;
+                        line-height: 38px;
+                        display:inline-block;
+                        border-radius:50% ;
+                        color:#000;
+                    }
+                    & .inactive{
+                        width:38px;
+                        height:38px; 
+                        background: #ABABAB; 
+                        text-align: center;
+                        line-height: 38px;
+                        display:inline-block;
+                        border-radius:50% ;
+                        coor:#000
+                    }
+                }
+            }
         }
     }
 }
