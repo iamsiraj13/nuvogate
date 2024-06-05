@@ -208,6 +208,30 @@
     ],
   });
 
+  // slider for product
+
+  $(".slider-for").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    fade: true,
+    asNavFor: ".slider-nav",
+  });
+  $(".slider-nav").slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: ".slider-for",
+    arrows: true,
+    dots: false,
+    centerMode: false,
+    focusOnSelect: true,
+    prevArrow:
+      '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
+    nextArrow:
+      '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+  });
+
   ////////////////////////////////////////////////////
   // 08. slider__active Slider Js
   if (jQuery(".slider__active").length > 0) {
