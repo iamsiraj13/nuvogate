@@ -1,0 +1,103 @@
+@use '../utils' as *;
+ 
+ 
+ .quote__area{
+    padding:100px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #23252A;
+    
+    @media #{$sm}{
+        padding:40px 0;
+    }
+    @media #{$xs}{
+        padding:40px 0;
+    }
+
+    & .quote__content{
+        background-color:#4F5155;
+        padding:80px 0;
+        border-radius:30px;
+        & .quote__title{
+            text-align: center;
+            @media #{$xs}{
+             text-align: left;
+             margin-left: 15px;
+             margin-right: 15px;
+             
+                }
+            h2{
+                font-weight: 400;
+                color:#fff; 
+                @media #{$xs}{
+                    font-size: 26px;
+                    }
+            }
+            & p{
+                font-size: 16px;
+                color:#fff;
+                margin-bottom: 10px;
+            }
+        }
+
+        & .quote__form{
+            margin-top: 30px;
+            & .input_group{
+                @media #{$xs}{
+                    margin-left: 15px;
+                    margin-right: 15px;
+                }
+                & input{
+                    width:100%;
+                    background-color:#4F5155;
+                    box-shadow:none;
+                    outline:none;
+                    color: rgba(255, 255, 255, 1);
+                    font-size: 23px;
+                    font-weight: 400;
+                    border:none;
+                    padding:10px 0;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                    &::placeholder{
+                        color: #A7A8AA;
+                        font-size: 23px;
+                        font-weight: 400;
+
+                    }
+                }
+            }
+
+            & .form__desc{
+                margin-top: 14px;
+                text-align: center;
+                @media #{$xs}{
+                    text-align: left;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                    }
+                & p{
+                    color: #FFFFFF;
+                    font-size: 11px;
+                    font-weight: 400;
+                    line-height: 1.5;
+
+                }
+                & button{
+                    padding:20px 40px;
+                    border-radius:30px;
+                    background-color: #51CC47;
+                    font-size: 17px;
+                    font-weight: 700;
+                    color:#fff;
+                    margin-top: 26px;
+                    transition:all 0.3s;
+                    
+                    &:hover{
+                        transform: translateY(-10px);
+                    }
+                }
+            }
+        }
+    }
+ }

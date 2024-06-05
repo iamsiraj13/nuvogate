@@ -1,0 +1,109 @@
+@use '../utils' as *;
+ 
+  .testimonial__area{
+    background-color: #171717;
+    padding:50px 0;
+
+    & .slick-track{ 
+        @media #{$xs}{
+            transform: translate3d(-293px, 0px, 0px) !important;
+        }
+    }
+    & .slick-slide{
+        
+        @media #{$xs}{
+            width:419px !important;
+            padding: 0px 72px;
+            margin: 0px -63px;
+        
+        }
+        
+    }
+
+    & .testimonial__box{
+        background-color: #4F5155;
+        max-width:334px;
+        width:100%;
+        padding:40px;
+        border-radius:20px;
+        @media #{$xs}{
+            padding:27px;
+        }
+
+        & .star{
+            margin-bottom: 10px;
+            & ul{
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display:flex;
+                gap:5px;
+                & li{
+                    color:#fff;
+
+                }
+            }
+        }
+
+        & .test__author{
+            margin-bottom: 40px;
+           & h4{
+                font-size: 20px;
+                font-weight: 400;
+                color:#fff;
+                margin-bottom: 5px;
+                @media #{$sm}{
+                    font-size: 15px;
+                }
+                @media #{$xs}{
+                    font-size: 15px;
+                }
+                
+            }
+            & p{
+                color: #D2D2D2;
+                font-size: 16px;
+                font-weight: 400;
+                
+
+            }
+        }
+
+        & .test__content{
+            & h3{
+                font-size: 22px;
+                font-weight: 400;
+                color:#fff;
+                margin-bottom: 10px;
+                @media #{$xs}{
+                    font-size: 15px;
+                }
+            }
+            & p{
+                color: #D2D2D2;
+                font-size: 19px;
+                font-weight: 400;
+                margin-bottom: 20px;
+                @media #{$xs}{
+                    font-size: 15px;
+                }
+
+            }
+            & a{
+                font-size: 17px;
+                font-weight: 700;
+                border-bottom:1px solid #fff;
+                color:#fff;
+                @media #{$xs}{
+                    font-size: 11px;
+                }
+            }
+        }
+
+
+
+    }
+
+
+
+  }

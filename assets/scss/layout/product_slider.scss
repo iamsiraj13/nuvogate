@@ -1,0 +1,38 @@
+@use '../utils' as *;
+   
+
+
+.product__area{
+
+
+
+
+
+
+    // feature table 
+    & .feature__table{
+        background-color: #4F5155;
+        padding:50px;
+        border-radius:30px;
+        & thead{
+           & tr{
+            align-items: center;
+            dislay:flex;
+            & th{
+
+                padding-top:10px;
+                padding-bottom: 50px;
+
+                &:first-child{
+                    font-size: 32px;
+                    color:#fff;
+                    font-weight: 400;
+                }
+                & img{
+                    width:60px;
+                }
+            }
+           }
+        }
+    }
+}
