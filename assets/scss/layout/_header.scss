@@ -11,7 +11,7 @@
         margin: auto;
         top: 0;
         width: 100%;
-        z-index: 99;
+        z-index: 10;
         background: transparent;
     }
    &__area{
@@ -108,3 +108,247 @@
 }
 
  
+/* The Modal (background) */
+.nuvomodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background: rgba(255, 255, 255, 0.3);
+    padding:0 15px;
+
+    // background-color: rgba(0,0,0,0.4);  
+
+     
+  }
+  
+  /* Modal Content/Box */
+  .nuvo__content { 
+    margin: 10% auto;  
+    border-radius:20px;
+    overflow: hidden; 
+    max-width: 1072px;  
+    width:100%;
+    position:relative;
+    z-index:99999;
+
+    & .nuvo__header{ 
+        background-color: #4F5155;
+
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:40px;
+        & .nuvo__back{
+            font-size:20px;
+            color:#fff;
+        }
+        & h3{
+            color:#fff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        & .nuvo__close{
+            color:#fff;
+            cursor:pointer;
+        }
+    }
+    & .nuvo__body{
+        background-color: #23252A;
+        text-align: left;
+        padding: 10px;
+
+
+        // progress bar 
+
+        & .progressbar{
+            position:relative;
+            display:flex;
+            justify-content: space-between; 
+            counter-reset: step;
+            width:70%;
+            margin:30px auto;
+
+            &::before{
+                content:"";
+                position:absolute;
+                
+                width:100%;
+                height:2px;
+                background-color: rgba(210, 210, 210, 1);
+                top:50%;
+                transform: translateY(-50%);
+
+            }
+            & .progress{
+                content:"";
+                position:absolute; 
+                width:0%;
+                height:2px;
+                background-color: rgb(22, 232, 95); 
+                top:50%;
+                transform: translateY(-50%);
+
+            }
+            & .progress__step{
+                width:38px;
+                height:38px;
+                background-color: #23252A;
+                border:2px solid rgba(210, 210, 210, 1);
+                border-radius:50%; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color:#fff;
+                z-index:9;
+               
+               
+                &::before{
+                    counter-increment: step;
+                    content:counter(step);
+                   
+                }
+                &::after{
+                    content: attr(data-title);
+                    position:absolute;
+                    top: 100%;
+                    color:#fff;
+                    width:100%;
+                    text-align: center;
+                    margin-top: 10px;
+                    font-size: 8px;
+                    font-weight: 400;
+                }
+            }
+
+            & .progress__active{ 
+                background-color: #51CC47;
+                border-color: #51CC47;
+
+            }
+        }
+
+        & .form__step{
+            display:none;
+            margin-top: 70px;
+            & p{
+                color:#fff; 
+               
+            }
+
+            & .nuvo__card__wrapper{
+                padding:0 15px;
+
+                & .nuvo__card{
+                    width:100%;
+                    border-radius:20px;
+                    overflow: hidden;
+                    & .nuvo__card__header{
+                        background-color: #3A5548;
+                        padding:24px 24px 20px;
+                        & h3{
+                            font-size: 25px;
+                            font-weight: 700;
+                            color:#Fff;
+                            text-align: center;
+                            text-transform: uppercase;
+                        }
+                    }
+                    & .nuvo__card__img{
+                        & img{
+                            width:100%;
+                        }
+                    }
+                    & .nuvo__card__content{
+                        padding:20px 24px 16px;
+                        background-color:#4F5155;
+                        text-align: center;
+                        & p{
+                            font-size: 16px;
+                            font-weight: 600;
+                            color:#fff;
+                        }
+                        & a{
+                            width:48px;
+                            height:48px;
+                            line-height: 48px;
+                            display:inline-block;
+                            text-align: center;
+                            border: 2px solid #ABABAB;
+                            color:#ABABAB;
+                            font-size: 24px;
+                            border-radius:50%; 
+                        }
+                        & .nuvo__active{
+                            border: 2px solid #51CC47;
+                            color:#51CC47;
+                        }
+
+                    
+                    }
+                }
+            }
+
+            // form step two content 
+            & .residence__area{
+                margin:0 30px;
+                background-color: #303133;
+                border-radius:20px;
+                & .resident__wrapper{
+                    & .resident__top{
+                        display:flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding:8px 0;
+                        & .resident__type{
+                            width:50%;
+                            text-align: center;
+                            border-right: 1px solid rgba(191, 199, 199, 1);
+                            & p{
+                                font-size: 9px;
+                                color:#fff;
+                                font-weight: 400;
+                                margin: 0;
+                            }
+                            & h4{
+                                font-size: 15px;
+                                color:#fff;
+                                font-weight: 400;
+
+                            }
+                        }
+                        & .resident__doors{
+                            width:50%;
+                            text-align: center;
+                            & p{
+                                font-size: 9px;
+                                color:#fff;
+                                font-weight: 400;
+                                margin: 0;
+                            }
+                            & h4{
+                                font-size: 15px;
+                                color:#fff;
+                                font-weight: 400;
+
+                            }
+                        }
+                    }
+                }
+
+            }
+
+
+        }
+        & .form__step__active{
+            display:block;
+        }
+
+    }
+  }
+   

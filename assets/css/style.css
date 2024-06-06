@@ -671,7 +671,7 @@ input[type=color] {
   margin: auto;
   top: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 10;
   background: transparent;
 }
 .header__area {
@@ -746,6 +746,213 @@ input[type=color] {
 /* logo */
 .logo img {
   width: 100px;
+}
+
+/* The Modal (background) */
+.nuvomodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(255, 255, 255, 0.3);
+  padding: 0 15px;
+}
+
+/* Modal Content/Box */
+.nuvo__content {
+  margin: 10% auto;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 1072px;
+  width: 100%;
+  position: relative;
+  z-index: 99999;
+}
+.nuvo__content .nuvo__header {
+  background-color: #4F5155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+.nuvo__content .nuvo__header .nuvo__back {
+  font-size: 20px;
+  color: #fff;
+}
+.nuvo__content .nuvo__header h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+.nuvo__content .nuvo__header .nuvo__close {
+  color: #fff;
+  cursor: pointer;
+}
+.nuvo__content .nuvo__body {
+  background-color: #23252A;
+  text-align: left;
+  padding: 10px;
+}
+.nuvo__content .nuvo__body .progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  width: 70%;
+  margin: 30px auto;
+}
+.nuvo__content .nuvo__body .progressbar::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(210, 210, 210);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nuvo__content .nuvo__body .progressbar .progress {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(22, 232, 95);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nuvo__content .nuvo__body .progressbar .progress__step {
+  width: 38px;
+  height: 38px;
+  background-color: #23252A;
+  border: 2px solid rgb(210, 210, 210);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  z-index: 9;
+}
+.nuvo__content .nuvo__body .progressbar .progress__step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+.nuvo__content .nuvo__body .progressbar .progress__step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: 100%;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 8px;
+  font-weight: 400;
+}
+.nuvo__content .nuvo__body .progressbar .progress__active {
+  background-color: #51CC47;
+  border-color: #51CC47;
+}
+.nuvo__content .nuvo__body .form__step {
+  display: none;
+  margin-top: 70px;
+}
+.nuvo__content .nuvo__body .form__step p {
+  color: #fff;
+}
+.nuvo__content .nuvo__body .form__step .nuvo__card__wrapper {
+  padding: 0 15px;
+}
+.nuvo__content .nuvo__body .form__step .nuvo__card__wrapper .nuvo__card {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.nuvo__content .nuvo__body .form__step .nuvo__card__wrapper .nuvo__card .nuvo__card__header {
+  background-color: #3A5548;
+  padding: 24px 24px 20px;
+}
+.nuvo__content .nuvo__body .form__step .nuvo__card__wrapper .nuvo__card .nuvo__card__header h3 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #Fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+.nuvo__content .nuvo__body .form__step .nuvo__card__wrapper .nuvo__card .nuvo__card__img img {
+  width: 100%;
+}
+.nuvo__content .nuvo__body .form__step .nuvo__card__wrapper .nuvo__card .nuvo__card__content {
+  padding: 20px 24px 16px;
+  background-color: #4F5155;
+  text-align: center;
+}
+.nuvo__content .nuvo__body .form__step .nuvo__card__wrapper .nuvo__card .nuvo__card__content p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+.nuvo__content .nuvo__body .form__step .nuvo__card__wrapper .nuvo__card .nuvo__card__content a {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid #ABABAB;
+  color: #ABABAB;
+  font-size: 24px;
+  border-radius: 50%;
+}
+.nuvo__content .nuvo__body .form__step .nuvo__card__wrapper .nuvo__card .nuvo__card__content .nuvo__active {
+  border: 2px solid #51CC47;
+  color: #51CC47;
+}
+.nuvo__content .nuvo__body .form__step .residence__area {
+  margin: 0 30px;
+  background-color: #303133;
+  border-radius: 20px;
+}
+.nuvo__content .nuvo__body .form__step .residence__area .resident__wrapper .resident__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+.nuvo__content .nuvo__body .form__step .residence__area .resident__wrapper .resident__top .resident__type {
+  width: 50%;
+  text-align: center;
+  border-right: 1px solid rgb(191, 199, 199);
+}
+.nuvo__content .nuvo__body .form__step .residence__area .resident__wrapper .resident__top .resident__type p {
+  font-size: 9px;
+  color: #fff;
+  font-weight: 400;
+  margin: 0;
+}
+.nuvo__content .nuvo__body .form__step .residence__area .resident__wrapper .resident__top .resident__type h4 {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 400;
+}
+.nuvo__content .nuvo__body .form__step .residence__area .resident__wrapper .resident__top .resident__doors {
+  width: 50%;
+  text-align: center;
+}
+.nuvo__content .nuvo__body .form__step .residence__area .resident__wrapper .resident__top .resident__doors p {
+  font-size: 9px;
+  color: #fff;
+  font-weight: 400;
+  margin: 0;
+}
+.nuvo__content .nuvo__body .form__step .residence__area .resident__wrapper .resident__top .resident__doors h4 {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 400;
+}
+.nuvo__content .nuvo__body .form__step__active {
+  display: block;
 }
 
 .hero__area {
@@ -1161,11 +1368,28 @@ input[type=color] {
   padding-bottom: 80px;
   background-color: #23252A;
 }
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .product__area {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 575px) {
+  .product__area {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
 .product__area .product__slider {
   background-color: #4F5155;
   border-radius: 30px;
   padding: 50px 60px;
   margin-bottom: 100px;
+}
+@media (max-width: 575px) {
+  .product__area .product__slider {
+    padding: 30px;
+  }
 }
 .product__area .product__slider .slider__left h3 {
   font-size: 35px;
@@ -1173,22 +1397,73 @@ input[type=color] {
   margin-bottom: 131px;
   font-weight: 400;
 }
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .product__area .product__slider .slider__left h3 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 575px) {
+  .product__area .product__slider .slider__left h3 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .product__area .product__slider .slider__left .slider__left__wrapper .slider__left__thumb {
+    width: 75%;
+    margin: auto;
+  }
+}
+@media (max-width: 575px) {
+  .product__area .product__slider .slider__left .slider__left__wrapper .slider__left__thumb {
+    width: 75%;
+    margin: auto;
+  }
+}
+@media (max-width: 575px) {
+  .product__area .product__slider .slider__left .slider__left__wrapper .slider__left__thumb img {
+    width: 100%;
+  }
+}
 .product__area .product__slider .slider__right__top {
   margin-bottom: 50px;
 }
 .product__area .product__slider .slider__right__top .slider-nav {
   position: relative;
 }
+.product__area .product__slider .slider__right__top .slider-nav .slick-list {
+  max-width: 450px;
+  width: 100%;
+  margin-left: 30px;
+}
+.product__area .product__slider .slider__right__top .slider-nav slick-track {
+  transform: translate3d(-436px, 0px, 0px);
+}
 .product__area .product__slider .slider__right__top .slider-nav .slick-prev {
   position: absolute;
-  top: 40%;
-  left: 0;
-  width: 60px;
-  height: 60px;
+  top: 20%;
+  left: -20px;
+  width: 40px;
+  height: 40px;
   background-color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
+  z-index: 9;
+  justify-content: center;
+}
+.product__area .product__slider .slider__right__top .slider-nav .slick-next {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  z-index: 9;
   justify-content: center;
 }
 .product__area .product__slider .slider__right__top .slick-current .top__box .top__box__img {

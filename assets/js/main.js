@@ -4,6 +4,8 @@
 01. PreLoader Js
 
 
+
+
 ****************************************************/
 
 (function ($) {
@@ -16,6 +18,83 @@
     $("#loading").fadeOut(500);
   });
 
+  // Get the modal
+  var modal = $("#nuvoModal");
+
+  // Get the button that opens the modal
+  var btn = $("#myBtn");
+
+  // Get the <span> element that closes the modal
+  var span = $(".nuvo__close");
+
+  // When the user clicks on the button, open the modal
+  btn.on("click", function () {
+    modal.css("display", "block");
+  });
+
+  // When the user clicks on <span> (x), close the modal
+  span.on("click", function () {
+    modal.css("display", "none");
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  $(window).on("click", function (event) {
+    if ($(event.target).is(modal)) {
+      modal.css("display", "none");
+    }
+  });
+
+  $(document).ready(function () {
+    const $prevBtns = $(".btn-prev");
+    const $nextBtns = $(".btn-next");
+    const $progress = $("#progress");
+    const $formSteps = $(".form__step");
+    const $progressSteps = $(".progress__step");
+
+    let formStepNum = 0;
+
+    $nextBtns.on("click", function () {
+      formStepNum++;
+      updateFormSteps();
+      updateProgressbar();
+    });
+
+    $prevBtns.on("click", function () {
+      formStepNum--;
+      updateFormSteps();
+      updateProgressbar();
+    });
+
+    function updateFormSteps() {
+      $formSteps.removeClass("form__step__active");
+      $formSteps.eq(formStepNum).addClass("form__step__active");
+    }
+
+    function updateProgressbar() {
+      $progressSteps.each(function (idx) {
+        if (idx < formStepNum + 1) {
+          $(this).addClass("progress__active");
+        } else {
+          $(this).removeClass("progress__active");
+        }
+      });
+
+      const progressActiveCount = $(".progress__active").length;
+
+      $progress.css(
+        "width",
+        ((progressActiveCount - 1) / ($progressSteps.length - 1)) * 100 + "%"
+      );
+    }
+  });
+
+  // $("#fade").modal({
+  //   fadeDuration: 100,
+  // });
+
+  // $("#myBtn").click(function () {
+  //   $("#myModal").modal();
+  // });
   ////////////////////////////////////////////////////
   // 03. Sidebar Js
   $(".offcanvas-toggle-btn").on("click", function () {
@@ -210,11 +289,23 @@
 
   // slider for product
 
+  $(".slider-you").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    asNavFor: ".slider-nav",
+  });
   $(".slider-for").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     dots: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
     fade: true,
     asNavFor: ".slider-nav",
   });
@@ -233,140 +324,6 @@
   });
 
   ////////////////////////////////////////////////////
-  // 08. slider__active Slider Js
-  if (jQuery(".slider__active").length > 0) {
-    let sliderActive1 = ".slider__active";
-    let sliderInit1 = new Swiper(sliderActive1, {
-      // Optional parameters
-      slidesPerView: 1,
-      slidesPerColumn: 1,
-      paginationClickable: true,
-      loop: true,
-      effect: "fade",
-
-      autoplay: {
-        delay: 5000,
-      },
-
-      // If we need pagination
-      pagination: {
-        el: ".main-slider-paginations",
-        // dynamicBullets: true,
-        clickable: true,
-      },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-
-      a11y: false,
-    });
-
-    function animated_swiper(selector, init) {
-      let animated = function animated() {
-        $(selector + " [data-animation]").each(function () {
-          let anim = $(this).data("animation");
-          let delay = $(this).data("delay");
-          let duration = $(this).data("duration");
-
-          $(this)
-            .removeClass("anim" + anim)
-            .addClass(anim + " animated")
-            .css({
-              webkitAnimationDelay: delay,
-              animationDelay: delay,
-              webkitAnimationDuration: duration,
-              animationDuration: duration,
-            })
-            .one(
-              "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
-              function () {
-                $(this).removeClass(anim + " animated");
-              }
-            );
-        });
-      };
-      animated();
-      // Make animated when slide change
-      init.on("slideChange", function () {
-        $(sliderActive1 + " [data-animation]").removeClass("animated");
-      });
-      init.on("slideChange", animated);
-    }
-
-    animated_swiper(sliderActive1, sliderInit1);
-  }
-
-  var sliderr = new Swiper(".active-class", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-      el: ".testimonial-pagination-6",
-      clickable: true,
-      renderBullet: function (index, className) {
-        return (
-          '<span class="' +
-          className +
-          '">' +
-          "<button>" +
-          (index + 1) +
-          "</button>" +
-          "</span>"
-        );
-      },
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 3,
-      },
-      992: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      576: {
-        slidesPerView: 1,
-      },
-      0: {
-        slidesPerView: 1,
-      },
-    },
-  });
-
-  var postboxSlider = new Swiper(".postbox__slider", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    autoplay: {
-      delay: 3000,
-    },
-    // Navigation arrows
-    navigation: {
-      nextEl: ".postbox-slider-button-next",
-      prevEl: ".postbox-slider-button-prev",
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 1,
-      },
-      992: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 1,
-      },
-      576: {
-        slidesPerView: 1,
-      },
-      0: {
-        slidesPerView: 1,
-      },
-    },
-  });
 
   ////////////////////////////////////////////////////
   // 13. Masonary Js
@@ -430,44 +387,11 @@
   });
 
   ////////////////////////////////////////////////////
-  // 17. Show Login Toggle Js
-  $("#showlogin").on("click", function () {
-    $("#checkout-login").slideToggle(900);
-  });
-
-  ////////////////////////////////////////////////////
-  // 18. Show Coupon Toggle Js
-  $("#showcoupon").on("click", function () {
-    $("#checkout_coupon").slideToggle(900);
-  });
-
-  ////////////////////////////////////////////////////
-  // 19. Create An Account Toggle Js
-  $("#cbox").on("click", function () {
-    $("#cbox_info").slideToggle(900);
-  });
-
-  ////////////////////////////////////////////////////
-  // 20. Shipping Box Toggle Js
-  $("#ship-box").on("click", function () {
-    $("#ship-box-info").slideToggle(1000);
-  });
-
-  ////////////////////////////////////////////////////
   // 21. Counter Js
   $(".counter").counterUp({
     delay: 10,
     time: 1000,
   });
-
-  ////////////////////////////////////////////////////
-  // 22. Parallax Js
-  if ($(".scene").length > 0) {
-    $(".scene").parallax({
-      scalarX: 10.0,
-      scalarY: 15.0,
-    });
-  }
 
   ////////////////////////////////////////////////////
   // 23. InHover Active Js

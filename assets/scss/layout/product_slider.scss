@@ -6,6 +6,14 @@
     padding-top: 100px;
     padding-bottom: 80px;
     background-color: #23252A;
+    @media #{$sm}{
+        padding-top:40px;
+        padding-bottom: 40px;
+    }
+    @media #{$xs}{
+        padding-top:40px;
+        padding-bottom: 40px;
+    }
 
 
     // slider product 
@@ -14,6 +22,9 @@
         border-radius:30px;
         padding:50px 60px;
         margin-bottom: 100px;
+        @media #{$xs}{
+            padding:30px;
+        }
 
         & .slider__left{
             & h3{
@@ -21,6 +32,32 @@
                 color:#fff;
                 margin-bottom: 131px;
                 font-weight: 400;
+                @media #{$sm}{
+                    font-size: 26px;
+                    margin-bottom: 30px;
+                }
+                @media #{$xs}{
+                    font-size: 26px;
+                    margin-bottom: 30px;
+                }
+            }
+            & .slider__left__wrapper{
+                & .slider__left__thumb{
+                    @media #{$sm}{
+                        width:75%;
+                        margin:auto;
+                    }
+                    @media #{$xs}{
+                        width:75%;
+                        margin:auto;
+                    }
+                    &  img{
+                        
+                        @media #{$xs}{
+                            width:100%;
+                        }
+                    }
+                }
             }
         }
         
@@ -28,17 +65,43 @@
             margin-bottom: 50px;
             & .slider-nav{
                 position: relative;
+                & .slick-list{
+                    max-width:450px;
+                    width:100%;
+                    margin-left: 30px;
+                }
+
+                & slick-track{
+                    transform: translate3d(-436px, 0px, 0px);
+                }
+                & .slick-slide{
+                    // border:1px solid green;
+                }
 
                 & .slick-prev{
-                    position:absolute;
-                    top:40%;
-                    left:0;
-                    width:60px;
-                    height:60px;
+                    position: absolute;
+                    top: 20%;
+                    left: -20px;
+                    width: 40px;
+                    height: 40px;
                     background-color: #fff;
-                    border-radius:50%;
-                    display:flex;
+                    border-radius: 50%;
+                    display: flex;
                     align-items: center;
+                    z-index: 9;
+                    justify-content: center;
+                }
+                & .slick-next{
+                    position: absolute;
+                    top: 20%;
+                    right: 0;
+                    width: 40px;
+                    height: 40px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    z-index: 9;
                     justify-content: center;
                 }
             }

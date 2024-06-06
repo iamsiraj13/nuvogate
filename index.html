@@ -13,7 +13,7 @@
 
    <!-- CSS here -->
    <link rel="stylesheet" href="assets/css/bootstrap.css">
-   <link rel="stylesheet" href="assets/css/meanmenu.css">
+
    <link rel="stylesheet" href="assets/css/animate.css">
    <link rel="stylesheet" href="assets/css/swiper-bundle.css">
    <link rel="stylesheet" href="assets/css/slick.css">
@@ -23,7 +23,10 @@
    <link rel="stylesheet" href="assets/css/ui-icon.css">
    <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
    <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
    <link rel="stylesheet" href="assets/css/style.css">
+
+
 </head>
 
 <body>
@@ -65,7 +68,9 @@
                </div>
                <div class="col-xl-3 col-lg-4 ">
                   <div class="header__button text-end">
-                     <a href="#">Start Security Today <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                     <a href="#" id="myBtn">Start Security
+                        Today <span><i class="fa-solid fa-arrow-right"></i></span></a>
+
                   </div>
                </div>
             </div>
@@ -179,7 +184,121 @@
 
 
    <main>
-      <!-- hero area start  -->
+      <div class="nuvomodal " id="nuvoModal">
+         <div class="nuvo__content">
+
+            <div class="nuvo__header">
+               <div class="nuvo__back">
+                  <i class="fa-regular fa-arrow-left"></i>
+               </div>
+               <h3>Let's Start</h3>
+               <div class="nuvo__close ">
+                  <i class="fa-regular fa-xmark"></i>
+               </div>
+            </div>
+            <div class="nuvo__body">
+
+               <div class="progressbar">
+                  <div class="progress" id="progress"></div>
+                  <div class="progress__step progress__active" data-title="Home Pack"></div>
+                  <div class="progress__step" data-title="Residence / Doors & Windows"></div>
+                  <div class="progress__step" data-title="Finalize"></div>
+               </div>
+               <div class="form__step form__step__active">
+
+                  <div class="nuvo__card__wrapper">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="nuvo__card">
+                              <div class="nuvo__card__header">
+                                 <h3>home security system</h3>
+                              </div>
+                              <div class="nuvo__card__img">
+                                 <img src="./assets/img/service/1.png" alt="">
+                              </div>
+                              <div class="nuvo__card__content">
+                                 <p>The Starter Home Security System is a great way to start your home security journey.
+                                 </p>
+                                 <a href="#" class="nuvo__active"><i class="fa-regular fa-check"></i></a>
+
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4">
+                           <div class="nuvo__card">
+                              <div class="nuvo__card__header">
+                                 <h3>home security system</h3>
+                              </div>
+                              <div class="nuvo__card__img">
+                                 <img src="./assets/img/service/1.png" alt="">
+                              </div>
+                              <div class="nuvo__card__content">
+                                 <p>The Starter Home Security System is a great way to start your home security journey.
+                                 </p>
+                                 <a href="#" class=""><i class="fa-regular fa-check"></i></a>
+
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4">
+                           <div class="nuvo__card">
+                              <div class="nuvo__card__header">
+                                 <h3>home security system</h3>
+                              </div>
+                              <div class="nuvo__card__img">
+                                 <img src="./assets/img/service/1.png" alt="">
+                              </div>
+                              <div class="nuvo__card__content">
+                                 <p>The Starter Home Security System is a great way to start your home security journey.
+                                 </p>
+                                 <a href="#" class=""><i class="fa-regular fa-check"></i></a>
+
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class=" ">
+                     <a href="#" class="btn btn-primary btn-next">Next</a>
+                  </div>
+               </div>
+               <div class="form__step  ">
+                  <div class="residence__area">
+                     <div class="resident__wrapper">
+                        <div class="resident__top">
+                           <div class="resident__type">
+                              <p>Resident Type</p>
+                              <h4>Choose One</h4>
+                           </div>
+                           <div class="resident__doors">
+                              <p>Doors and Windows</p>
+                              <h4>Choose Any</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="btns-group d-flex">
+                     <a href="#" class=" btn btn-primary btn-prev">Previous</a>
+                     <a href="#" class=" btn btn-primary btn-next">Next</a>
+                  </div>
+               </div>
+               <div class="form__step  ">
+                  <h2>this is step trhee</h2>
+                  <p>
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quo dicta ducimus
+                     incidunt modi porro atque debitis dignissimos inventore culpa?
+                  </p>
+
+                  <div class="btns-group d-flex">
+                     <a href="#" class="btn btn-primary btn-prev">Previous</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
       <section class="hero__area" data-background="./assets/img/hero/hero.jpg">
          <div class="container">
             <div class="row">
@@ -269,6 +388,8 @@
       </section>
       <!-- service area end  -->
 
+
+
       <!-- product area start  -->
       <section class="product__area">
          <div class="container">
@@ -281,7 +402,7 @@
                      <div class="slider__left">
                         <h3>Part of a complete system</h3>
                         <div class="slider__left__wrapper">
-                           <div class="row slider-for">
+                           <div class="row slider-you">
                               <div class="col">
                                  <div class="slider__left__thumb">
                                     <img src="./assets/img/slider/1.png" alt="">
@@ -314,7 +435,7 @@
 
                   <!-- slider right side  -->
                   <div class="col-lg-5">
-                     <div class="slider__right__top">
+                     <div class="slider__right__top d-none d-lg-block">
                         <div class="row slider-nav">
                            <div class="col-12">
                               <div class="top__box">
@@ -401,7 +522,7 @@
                            </div>
                            <div class="col">
                               <div class="slider__content__box">
-                                 <h3>Outdoor Camera Pro</h3>
+                                 <h3>Smart Watch</h3>
                                  <p>With Smart Sentry™ AI, it’s smarter exterior
                                     protection.</p>
                                  <ul>
@@ -414,7 +535,7 @@
                            </div>
                            <div class="col">
                               <div class="slider__content__box">
-                                 <h3>Outdoor Camera Pro</h3>
+                                 <h3>Big Offered</h3>
                                  <p>With Smart Sentry™ AI, it’s smarter exterior
                                     protection.</p>
                                  <ul>
@@ -811,12 +932,14 @@
    <!-- JS here -->
    <script src="assets/js/vendor/jquery.js"></script>
    <script src="assets/js/vendor/waypoints.js"></script>
-   <script src="assets/js/bootstrap-bundle.js"></script>
-   <script src="assets/js/meanmenu.js"></script>
+   <!-- <script src="assets/js/bootstrap-bundle.js"></script> -->
+
    <script src="assets/js/swiper-bundle.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+
    <script src="assets/js/slick.js"></script>
    <script src="assets/js/magnific-popup.js"></script>
-   <script src="assets/js/parallax.js"></script>
    <script src="assets/js/backtotop.js"></script>
    <script src="assets/js/nice-select.js"></script>
    <script src="assets/js/counterup.js"></script>
